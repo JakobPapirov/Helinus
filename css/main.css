@@ -1,0 +1,14 @@
+
+.header-middle p {
+	font-family: Montserrat;
+	font-size: 1.5em; /* Change in height causes the other images to float to the top. */
+	letter-spacing: 10px; 
+	text-transform: uppercase;
+}
+
+#lin1 > h2,
+#lin1 > p,
+#lin2 > h2,
+#lin2 > p {
+	visibility: hidden;
+}
