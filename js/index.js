@@ -1,24 +1,8 @@
 $(document).ready(function() {
-	
-	setTimeout(lin1, 1000);
+	// https://www.w3schools.com/js/js_timing.asp
 
-	function lin1() {
-		/*	Status: Prototype
-	
-		*/	
-
-		$("#lin1 h2, #lin1 p").css('visibility', 'visible');
-
-		setTimeout(lin2, 1000);
-	}
-
-		function lin2() {
-		/*	Status: Prototype
-	
-		*/	
-
-		$("#lin2 h2, #lin2 p").css('visibility', 'visible');
-
-		//setTimeout(lin2, 1000);
-	}
+	$(".linus .timeline-content").each(function(index, el) {
+		
+		$(this).delay(index * 1000).fadeIn(1000);
+	});
 });
