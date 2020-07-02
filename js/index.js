@@ -4,21 +4,15 @@ $(document).ready(function() {
 
 	function lin1() {
 		/*	Status: Prototype
-	
+			
 		*/	
 
 		$("#lin1 h2, #lin1 p").css('visibility', 'visible');
 
-		setTimeout(lin2, 1000);
-	}
+		// Scroll to element 
+			// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+		let element = document.getElementById("lin1"); // jQuery syntax not working
 
-		function lin2() {
-		/*	Status: Prototype
-	
-		*/	
-
-		$("#lin2 h2, #lin2 p").css('visibility', 'visible');
-
-		//setTimeout(lin2, 1000);
+		element.scrollIntoView({behavior: "smooth", block: "end"});
 	}
 });
