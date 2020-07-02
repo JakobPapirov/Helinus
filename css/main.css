@@ -6,9 +6,18 @@
 	text-transform: uppercase;
 }
 
-#lin1 > h2,
-#lin1 > p,
-#lin2 > h2,
-#lin2 > p {
+.linus .timeline-content > h2 {
+	visibility: hidden;
+}
+
+.linus .timeline-content > p {
+	visibility: hidden;
+}
+
+.helen .timeline-content > h2 {
+	visibility: hidden;
+}
+
+.helen .timeline-content > p {
 	visibility: hidden;
 }
