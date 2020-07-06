@@ -1,23 +1,33 @@
 
-.header-middle p {
-	font-family: Montserrat;
-	font-size: 1.5em; /* Change in height causes the other images to float to the top. */
-	letter-spacing: 10px; 
-	text-transform: uppercase;
-}
+/* >>> Fonts <<< */
+	.header-middle p {
+		font-family: Montserrat;
+		font-size: 1.5em; /* Change in height causes the other images to float to the top. */
+		letter-spacing: 10px; 
+		text-transform: uppercase;
+	}
 
-.linus .timeline-content > h2 {
-	visibility: hidden;
-}
+	#logo {
+		font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	}
 
-.linus .timeline-content > p {
-	visibility: hidden;
-}
+/* >>> Visibility <<< */
+	#lin1 {
+		display: none;
+	}
 
-.helen .timeline-content > h2 {
-	visibility: hidden;
-}
+	.linus .timeline-content > h2 {
+		visibility: hidden;
+	}
 
-.helen .timeline-content > p {
-	visibility: hidden;
-}
+	.linus .timeline-content > p {
+		visibility: hidden;
+	}
+
+	.helen .timeline-content > h2 {
+		visibility: hidden;
+	}
+
+	.helen .timeline-content > p {
+		visibility: hidden;
+	}

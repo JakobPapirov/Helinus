@@ -39,16 +39,16 @@
 			display: grid;
 
 			/* Setting up nested grids*/
-				grid-template-areas: "linus gMaps helen";
+				grid-template-areas: "linus middleCol helen";
 				gap: 2em; /* https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
-				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-columns: 2fr 1fr 2fr;
 		}
 			.linus {
 				grid-area: linus;
 			}
 
-			.gMaps {
-				grid-area: gMaps;
+			.middleCol {
+				grid-area: middleCol;
 			}
 			
 			.helen {
