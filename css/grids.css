@@ -39,18 +39,19 @@
 			display: grid;
 
 			/* Setting up nested grids*/
-				grid-template-areas: "linus middleCol helen";
+				grid-template-areas: "linus middle-ColL middle-ColR helen";
 				gap: 2em; /* https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
-				grid-template-columns: 2fr 1fr 2fr;
+				grid-template-columns: 4fr 1fr 1fr 4fr;
 		}
 			.linus {
 				grid-area: linus;
 			}
-
-			.middleCol {
-				grid-area: middleCol;
+			.middleCol1 {
+				grid-area: middle-ColL;
 			}
-			
+			.middleCol2 {
+				grid-area: middle-ColR;
+			}
 			.helen {
 				grid-area: helen;
 			}
