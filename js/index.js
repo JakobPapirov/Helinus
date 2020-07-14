@@ -25,7 +25,9 @@ $(document).ready(function() {
 	// function main runs every 2 seconds.. but only actually once.. Perhaps not the correct method after all..?
 	//setInterval( main, 2000 );
 	// https://javascript.info/settimeout-setinterval
-	setTimeout(main, 2000, idX);
+
+	// >>> Has set setTimeout offline during work in the CSS <<<
+	//setTimeout(main, 2000, idX);
 
 	function main(idX) {
 		// 
