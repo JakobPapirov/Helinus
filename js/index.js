@@ -1,63 +1,100 @@
 $(document).ready(function() {
 	// https://www.w3schools.com/js/js_timing.asp
 
-	/*$(".linus .timeline-content").each(function(index, el) {
-		
-		$(this).delay(index * 1000).fadeIn(1000);
-	});*/
+	// Automatically generates IDs and adds them to the correct div
+		// Linus'
+		let idsLin = $(".linus .timeline-content div");
 
-	/*	fadeIn() doesn't show hidden elements when they are visibility: hidden.
-		It will show display: none.
-			Mother fuckers.
-		https://stackoverflow.com/questions/2992611/jquery-showing-a-hidden-item-with-a-fadein
-	*/
+		const idXLin = []; // Var contains all the IDs
+		for (let i = 0; i < idsLin.length; i++) {
 
-	// Automatically generates Linus's IDs and adds them to the correct div
-	let ids = $(".timeline-content div");
+			idXLin[i] = `lin${i}`;
+			$(idsLin[i]).attr('id', idXLin[i] );
+		}
+		// Helen's
+		let idsHel = $(".helen .timeline-content div");
 
-	const idX = [];
-	for (let i = 0; i < ids.length; i++) {
+		const idXHel = []; // Var contains all the IDs
+		for (let i = 0; i < idsHel.length; i++) {
 
-		idX[i] = `lin${i}`;
-		$(ids[i]).attr('id', idX[i] );
-	}
+			idXHel[i] = `hel${i}`;
+			$(idsHel[i]).attr('id', idXHel[i] );
+		}
+		// Middle Col-L
+		let idsMCL = $(".middle-ColL .inv-timeline-content-ColL div");
+
+		const idXMCL = []; // Var contains all the IDs
+		for (let i = 0; i < idsMCL.length; i++) {
+
+			idXMCL[i] = `midColL${i}`;
+			$(idsMCL[i]).attr('id', idXMCL[i] );
+		}
+		// Middle Col-R
+		let idsMCR = $(".middle-ColR .inv-timeline-content-ColR div");
+
+		const idXMCR = []; // Var contains all the IDs
+		for (let i = 0; i < idsMCR.length; i++) {
+
+			idXMCR[i] = `midColR${i}`;
+			$(idsMCR[i]).attr('id', idXMCR[i] );
+		}
 
 	// function main runs every 2 seconds.. but only actually once.. Perhaps not the correct method after all..?
 	//setInterval( main, 2000 );
 	// https://javascript.info/settimeout-setinterval
 
 	// >>> Has set setTimeout offline during work in the CSS <<<
-	//setTimeout(main, 2000, idX);
+	// Controls when (delay) to set-off the function(s)
+	/*
+	setTimeout(main, 2000, idXLin); // Once
 
-	function main(idX) {
-		// 
-		linusShow(idX);
-		// If works, Add helenShow() as awell as third-col
+		// Main function that should trigger other functions
+		function main(idXLin) {
+			// 
+			linusShow(idXLin);
+			// If works, Add helenShow() as awell as third-col
+		}
+
+			// Function that displays Linus's cards
+				// Currently all are shown at once (via fadein)
+			function linusShow(idXLin) {
+				// 
+
+				for (let i = 0; i < idXLin.length; i++) {
+					setTimeout(() => $( "#" + idXLin[i] ).fadeIn( 3000 ), 2000);
+					//$( "#" + idXLin[i] ).fadeIn( 3000 ); // default = 400, A higher value => slower fadeIn
+				}
+			}
+	*/
+
+	function sleep(ms) {
+		// body...
+		return new Promise(resolve => setTimeout(resolve, ms));
 	}
+	async function main() {
+		// https://www.sitepoint.com/delay-sleep-pause-wait/
 
-	function linusShow(idX) {
-		// 
+		for (let i = 0; i < idXLin.length; i++) {
+			// Assuming (using Lin) I'll have symmetric number of IDs
+			await sleep(2000);
+			$( "#" + idXLin[i] ).fadeIn( 3000 );
 
-		for (let i = 0; i < idX.length; i++) {
-			$( "#" + idX[i] ).fadeIn( 3000 ); // default = 400, A higher value => slower fadeIn
+			/*	>>> https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+				jQuery syntax not working
+				https://stackoverflow.com/questions/4884839/how-do-i-get-an-element-to-scroll-into-view-using-jquery
+				scrollIntoView is an JS method,
+				jQuery would require another .animate() method
 
-			
+				Unsure why I couldn't package code below into autoScroll() - didn't work at all!
+			*/
+			let element = document.getElementById(idXLin[i]);
+			element.scrollIntoView({behavior: "smooth", block: "start"});
+
+			$( "#" + idXHel[i] ).fadeIn( 3000 );
+			$( "#" + idXMCL[i] ).fadeIn( 3500 );
+			$( "#" + idXMCR[i] ).fadeIn( 3500 );
 		}
 	}
 
-	/*setTimeout(lin0, 1000);
-
-	function lin0() {
-		/*	Status: Prototype
-			
-		*/	
-
-		//$( "#lin0" ).fadeIn( 2000 ); // default = 400, A higher value => slower fadeIn
-
-		//$("#lin0 h2, #lin0 p").css('visibility', 'visible');
-
-		/*	Not what I want. I want the text to fadeIn!
-		*/
-	//}
-
+	main(); // No inputs are required as the vars were made const's
 });
