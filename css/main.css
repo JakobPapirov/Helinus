@@ -9,10 +9,11 @@
 
 	#logo {
 		font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+		font-size: 2em;
 	}
 
 /* >>> Visibility <<< */
-	#lin1 {
+	.hidden-content {
 		display: none;
 	}
 
